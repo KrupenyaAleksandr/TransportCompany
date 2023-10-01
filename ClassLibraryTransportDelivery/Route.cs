@@ -31,41 +31,17 @@ namespace ClassLibraryTransportDelivery
         {
             get => _Distance;
             set => _Distance = value;
-/*            set
-            {
-                if (value < 1) { // наверно надо переделать под диалоговое окно
-                    Console.WriteLine("Дистанция должна быть больше нуля!\n");
-                }
-                else 
-                    _Distance = value;
-            }*/
         }
 
         public int TripTimeInDays
         {
             get => _TripTimeInDays;
             set => _TripTimeInDays = value;
-/*            set
-            {
-                if (value < 1) { // наверно надо переделать под диалоговое окно
-                    Console.WriteLine("Время в пути должно быть больше нуля!\n");
-                }
-                else
-                    _TripTimeInDays = value;
-            }*/
         }
         public double Payment
         {
             get => _Payment;
             set => _Payment = value;
-/*            set
-            {
-                if (value < 1){
-                    Console.WriteLine("Оплата должна быть больше нуля!\n");
-                }
-                else 
-                    _Payment = value;
-            }*/
         }
         public bool isValid
         {

@@ -45,18 +45,17 @@
             this.toolStripMenuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuFileItem1});
             this.toolStripMenuFile.Name = "toolStripMenuFile";
-            this.toolStripMenuFile.Size = new System.Drawing.Size(80, 34);
+            this.toolStripMenuFile.Size = new System.Drawing.Size(48, 22);
             this.toolStripMenuFile.Text = "Файл";
             // 
             // toolStripMenuFileItem1
             // 
             this.toolStripMenuFileItem1.Name = "toolStripMenuFileItem1";
-            this.toolStripMenuFileItem1.Size = new System.Drawing.Size(191, 40);
+            this.toolStripMenuFileItem1.Size = new System.Drawing.Size(109, 22);
             this.toolStripMenuFileItem1.Text = "Выход";
             // 
             // toolStripMenu
             // 
-            this.toolStripMenu.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuFile,
@@ -64,7 +63,8 @@
             this.toolStripMenuDriver});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
-            this.toolStripMenu.Size = new System.Drawing.Size(800, 38);
+            this.toolStripMenu.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
+            this.toolStripMenu.Size = new System.Drawing.Size(436, 24);
             this.toolStripMenu.TabIndex = 1;
             this.toolStripMenu.Text = "Файл";
             // 
@@ -74,20 +74,20 @@
             this.toolStripMenuRouteAdd,
             this.toolStripMenuRouteEdit});
             this.toolStripMenuRoute.Name = "toolStripMenuRoute";
-            this.toolStripMenuRoute.Size = new System.Drawing.Size(136, 34);
+            this.toolStripMenuRoute.Size = new System.Drawing.Size(81, 22);
             this.toolStripMenuRoute.Text = "Маршруты";
             // 
             // toolStripMenuRouteAdd
             // 
             this.toolStripMenuRouteAdd.Name = "toolStripMenuRouteAdd";
-            this.toolStripMenuRouteAdd.Size = new System.Drawing.Size(273, 40);
+            this.toolStripMenuRouteAdd.Size = new System.Drawing.Size(154, 22);
             this.toolStripMenuRouteAdd.Text = "Добавить";
             this.toolStripMenuRouteAdd.Click += new System.EventHandler(this.toolStripMenuRouteAdd_Click);
             // 
             // toolStripMenuRouteEdit
             // 
             this.toolStripMenuRouteEdit.Name = "toolStripMenuRouteEdit";
-            this.toolStripMenuRouteEdit.Size = new System.Drawing.Size(273, 40);
+            this.toolStripMenuRouteEdit.Size = new System.Drawing.Size(154, 22);
             this.toolStripMenuRouteEdit.Text = "Редактировать";
             this.toolStripMenuRouteEdit.Click += new System.EventHandler(this.toolStripMenuRouteEdit_Click);
             // 
@@ -97,31 +97,32 @@
             this.toolStripMenuDriverAdd,
             this.toolStripMenuDriverEdit});
             this.toolStripMenuDriver.Name = "toolStripMenuDriver";
-            this.toolStripMenuDriver.Size = new System.Drawing.Size(121, 34);
+            this.toolStripMenuDriver.Size = new System.Drawing.Size(71, 22);
             this.toolStripMenuDriver.Text = "Водители";
             // 
             // toolStripMenuDriverAdd
             // 
             this.toolStripMenuDriverAdd.Name = "toolStripMenuDriverAdd";
-            this.toolStripMenuDriverAdd.Size = new System.Drawing.Size(315, 40);
+            this.toolStripMenuDriverAdd.Size = new System.Drawing.Size(154, 22);
             this.toolStripMenuDriverAdd.Text = "Добавить";
             this.toolStripMenuDriverAdd.Click += new System.EventHandler(this.toolStripMenuDriverAdd_Click);
             // 
             // toolStripMenuDriverEdit
             // 
             this.toolStripMenuDriverEdit.Name = "toolStripMenuDriverEdit";
-            this.toolStripMenuDriverEdit.Size = new System.Drawing.Size(315, 40);
+            this.toolStripMenuDriverEdit.Size = new System.Drawing.Size(154, 22);
             this.toolStripMenuDriverEdit.Text = "Редактировать";
             this.toolStripMenuDriverEdit.Click += new System.EventHandler(this.toolStripMenuDriverEdit_Click);
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(436, 244);
             this.Controls.Add(this.toolStripMenu);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormMain";
-            this.Text = "Form1";
+            this.Text = "Грузовые перевозки";
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
             this.ResumeLayout(false);

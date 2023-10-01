@@ -27,11 +27,27 @@ namespace Lab4
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Route.Name.From = fromTextBox.Text;
-            Route.Name.To = toTextBox.Text;
-            Route.Distance = Convert.ToInt32(distanceTextBox.Text); //сколько это???????потом узнаю
-            Route.TripTimeInDays = Convert.ToInt32(tripTimeTextBox.Text);
-            Route.Payment = Convert.ToDouble(paymentTextBox.Text);
+            if (fromTextBox.Text != "")
+            {
+                Route.Name.From = fromTextBox.Text;
+                if (toTextBox.Text != "")
+                {
+                    Route.Name.To = toTextBox.Text;
+                    if (int.TryParse(distanceTextBox.Text, out int dist))
+                    {
+                        Route.Distance = dist;
+                        if (int.TryParse(tripTimeTextBox.Text, out int tripTime))
+                        {
+                            Route.TripTimeInDays = tripTime;
+                            if (double.TryParse(paymentTextBox.Text, out double pay))
+                            {
+                                Route.Payment = pay;
+                                DialogResult = DialogResult.OK;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

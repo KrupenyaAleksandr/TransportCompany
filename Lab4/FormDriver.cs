@@ -21,19 +21,28 @@ namespace Lab4
             lastNameTextBox.Text = Driver.LastName;
             firstNameTextBox.Text = Driver.FirstName;
             middleNameTextBox.Text = Driver.MiddleName;
-            expirienceTextBox.Text = Convert.ToString(Driver.Expirience);
+            expirienceTextBox.Text = Convert.ToString(Driver.Experience);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Driver.LastName = lastNameTextBox.Text;
-            Driver.FirstName = firstNameTextBox.Text;
-            Driver.MiddleName = middleNameTextBox.Text;
-                if (int.TryParse(expirienceTextBox.Text, out int exp))
+            if (lastNameTextBox.Text != "")
+            {
+                Driver.LastName = lastNameTextBox.Text;
+                if (firstNameTextBox.Text != "")
                 {
-                    Driver.Expirience = exp;
-                    DialogResult = DialogResult.OK;
+                    Driver.FirstName = firstNameTextBox.Text;
+                    if (middleNameTextBox.Text != "")
+                    {
+                        Driver.MiddleName = middleNameTextBox.Text;
+                        if (int.TryParse(expirienceTextBox.Text, out int exp))
+                        {
+                            Driver.Experience = exp;
+                            DialogResult = DialogResult.OK;
+                        }
+                    }
                 }
+            }
         }
     }
 }

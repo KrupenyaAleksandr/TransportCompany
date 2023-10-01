@@ -12,7 +12,7 @@ namespace ClassLibraryTransportDelivery
         private Driver _Driver;
         private DateTime _StartDate;
         private DateTime _EndDate;
-        private double _Reward; // нормально назвать премию
+        private double _Award;
 
         public Route Route
         {
@@ -37,10 +37,10 @@ namespace ClassLibraryTransportDelivery
             set => _EndDate = value;
         }
 
-        public double Reward
+        public double Award
         {
-            get => _Reward; 
-            set => _Reward = value;
+            get => _Award; 
+            set => _Award = value;
         }
         public bool isValid {
             get
@@ -50,24 +50,25 @@ namespace ClassLibraryTransportDelivery
                 if (_StartDate == null || _StartDate < DateTime.Now) return false;
                 if (_EndDate == null || _EndDate < DateTime.Now) return false;
                 if (_StartDate >= _EndDate) return false;
+                if (_Award < 1) return false;
                 return true;
             }
         }
         public DoneWork() { }
 
-        public DoneWork(Route route, Driver driver, DateTime startDate, DateTime endDate, double reward)
+        public DoneWork(Route route, Driver driver, DateTime startDate, DateTime endDate, double award)
         { // как правильно обращаться, сразу к локальной переменной класса или через сеттер 
             _Route = route;
             _Driver = driver;
             _StartDate = startDate;
             _EndDate = endDate;
-            _Reward = reward;
+            _Award = award;
         }
 
         public override string ToString()
         { // как правильно обращаться, сразу к локальной переменной класса или через геттер 
             return
-                $"Маршрут:\n\n{_Route}\nВодитель:\n\n{_Driver}\nДата: {_StartDate} - {_EndDate}\n\n";
+                $"Маршрут:\n\n{_Route}\nВодитель:\n\n{_Driver}\nДата: {_StartDate} - {_EndDate}\nПремия: {_Award}\n\n";
         }
     }
 }
