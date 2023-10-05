@@ -13,6 +13,25 @@ namespace ClassLibraryTransportDelivery
     public class Driver : IValidatable
     {
         /// <summary>
+        /// id нового водителя
+        /// </summary>
+        private static int _newDriverId;
+
+        private static int newDriverId
+        {
+            get
+            {
+                _newDriverId++;
+                return _newDriverId;
+            }
+        }
+
+        /// <summary>
+        /// id водителя
+        /// </summary>
+        public int DriverId { get; }
+
+        /// <summary>
         /// Имя
         /// </summary>
         public string FirstName { get; set; } = "";
@@ -44,13 +63,17 @@ namespace ClassLibraryTransportDelivery
             }
         }
 
-        public Driver() { }
+        public Driver() 
+        {
+            DriverId = newDriverId;
+        }
         public Driver(string firstName, string lastName, string middleName, int experience)
         {
             FirstName = firstName;
             LastName = lastName;
             MiddleName = middleName;
             Experience = experience;
+            DriverId = newDriverId;
         }
 
         public override string ToString()

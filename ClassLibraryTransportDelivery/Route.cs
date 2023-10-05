@@ -12,6 +12,25 @@ namespace ClassLibraryTransportDelivery
     public class Route : IValidatable
     {
         /// <summary>
+        /// id маршрута
+        /// </summary>
+        private static int _NewRouteId;
+
+        /// <summary>
+        /// новый id маршрута
+        /// </summary>
+        private static int NewRouteId
+        {
+            get
+            {
+                _NewRouteId++;
+                return _NewRouteId;
+            }
+        }
+
+        public int RouteId { get; }
+
+        /// <summary>
         /// Название маршрута
         /// </summary>
         public RouteName Name { get; set; } = new RouteName();
@@ -42,7 +61,10 @@ namespace ClassLibraryTransportDelivery
             }
         }
 
-        public Route() {}
+        public Route() 
+        {
+            RouteId = NewRouteId;
+        }
 
         public Route(RouteName name, int distance, int tripTimeInDays, double payment)
         {
@@ -50,6 +72,7 @@ namespace ClassLibraryTransportDelivery
             Distance = distance;
             TripTimeInDays = tripTimeInDays;
             Payment = payment;
+            RouteId = NewRouteId;
         }
 
         public override string ToString()

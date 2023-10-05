@@ -10,7 +10,7 @@ namespace ClassLibraryTransportDelivery
     {
 
         public Route Route { get; set; }
-        public Driver Driver { get; set; }
+        public Driver Driver    { get; set; }
 
         /// <summary>
         /// Дата отправки
