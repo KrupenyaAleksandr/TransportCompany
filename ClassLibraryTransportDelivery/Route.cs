@@ -6,72 +6,56 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryTransportDelivery
 {
+    /// <summary>
+    /// Маршрут
+    /// </summary>
     public class Route : IValidatable
     {
-        private RouteName _Name;
-        private int _Distance;
-        private int _TripTimeInDays;
-        private double _Payment;
+        /// <summary>
+        /// Название маршрута
+        /// </summary>
+        public RouteName Name { get; set; } = new RouteName();
 
-        public RouteName Name
-        {
-            get {
-                if (_Name == null){
-                    _Name = new RouteName();
-                }
-                return _Name;
-            }
-            set {
-                _Name = value;
-                    
-            }
-        }
+        /// <summary>
+        /// Дистанция в километрах
+        /// </summary>
+        public int Distance { get; set; } = 1;
 
-        public int Distance
-        {
-            get => _Distance;
-            set => _Distance = value;
-        }
+        /// <summary>
+        /// Время в пути в днях
+        /// </summary>
+        public int TripTimeInDays { get; set; } = 1;
 
-        public int TripTimeInDays
-        {
-            get => _TripTimeInDays;
-            set => _TripTimeInDays = value;
-        }
-        public double Payment
-        {
-            get => _Payment;
-            set => _Payment = value;
-        }
+        /// <summary>
+        /// Оплата
+        /// </summary>
+        public double Payment { get; set; } = 1;
         public bool isValid
         {
             get
             {
-                if (_Name == null) return false;
-                if (_Distance <= 0) return false;
-                if (_TripTimeInDays <= 0) return false;
-                if (_Payment <= 0) return false;
+                if (Name == null) return false;
+                if (Distance <= 0) return false;
+                if (TripTimeInDays <= 0) return false;
+                if (Payment <= 0) return false;
                 return true;
             }
         }
 
-        public Route()
-        {
-
-        }
+        public Route() {}
 
         public Route(RouteName name, int distance, int tripTimeInDays, double payment)
         {
-            _Name = name;
-            _Distance = distance;
-            _TripTimeInDays = tripTimeInDays;
-            _Payment = payment;
+            Name = name;
+            Distance = distance;
+            TripTimeInDays = tripTimeInDays;
+            Payment = payment;
         }
 
         public override string ToString()
         {
             return
-                $"Название: {_Name}\nДистанция: {_Distance}\nВремя в пути: {_TripTimeInDays}\nОплата: {_Payment}\n";
+                $"Название: {Name}\nДистанция: {Distance}\nВремя в пути: {TripTimeInDays}\nОплата: {Payment}\n";
         }
     }
 }

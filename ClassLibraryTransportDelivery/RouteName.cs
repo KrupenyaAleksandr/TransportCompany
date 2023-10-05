@@ -8,37 +8,28 @@ namespace ClassLibraryTransportDelivery
 {
     public class RouteName
     {
-        private string _From; // назвать нормально пункт отправления
-        private string _To; //пункт прибытия 
+        /// <summary>
+        /// Пункт отправления
+        /// </summary>
+        public string From { get; set; } = "";
 
-        public string From
-        {
-            get => _From;
-            set => _From = value;
-        }
+        /// <summary>
+        /// Пункт прибытия
+        /// </summary>
+        public string To { get; set; } = "";
 
-        public string To
-        {
-            get => _To;
-            set => _To = value;
-        }
-
-        public RouteName()
-        {
-            _From = "";
-            _To = "";
-        }
+        public RouteName() { }
 
         public RouteName(string from, string to)
         {
-            _From = from;
-            _To = to;
+            From = from;
+            To = to;
         }
 
         public override string ToString()
         {
             return
-                $"{_From} - {_To}";
+                $"{From} - {To}";
         }
     }
 }

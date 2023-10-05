@@ -20,9 +20,9 @@ namespace Lab4
             Route = route;
             fromTextBox.Text = Route.Name.From;
             toTextBox.Text = Route.Name.To;
-            distanceTextBox.Text = Route.Distance.ToString();
-            tripTimeTextBox.Text = Route.TripTimeInDays.ToString();
-            paymentTextBox.Text = Route.Payment.ToString();
+            distanceNumericUpDown.Value = Route.Distance;
+            tripTimeNumericUpDown.Value = Route.TripTimeInDays;
+            paymentNumericUpDown.Value = Convert.ToDecimal(Route.Payment);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -33,19 +33,10 @@ namespace Lab4
                 if (toTextBox.Text != "")
                 {
                     Route.Name.To = toTextBox.Text;
-                    if (int.TryParse(distanceTextBox.Text, out int dist))
-                    {
-                        Route.Distance = dist;
-                        if (int.TryParse(tripTimeTextBox.Text, out int tripTime))
-                        {
-                            Route.TripTimeInDays = tripTime;
-                            if (double.TryParse(paymentTextBox.Text, out double pay))
-                            {
-                                Route.Payment = pay;
-                                DialogResult = DialogResult.OK;
-                            }
-                        }
-                    }
+                    Route.Distance = Convert.ToInt32(distanceNumericUpDown.Value);
+                    Route.TripTimeInDays = Convert.ToInt32(tripTimeNumericUpDown.Value);
+                    Route.Payment = Convert.ToDouble(paymentNumericUpDown.Value);
+                    DialogResult = DialogResult.OK;
                 }
             }
         }

@@ -8,67 +8,51 @@ namespace ClassLibraryTransportDelivery
 {
     public class DoneWork : IValidatable
     {
-        private Route _Route;
-        private Driver _Driver;
-        private DateTime _StartDate;
-        private DateTime _EndDate;
-        private double _Award;
 
-        public Route Route
-        {
-            get => _Route;
-            set => _Route = value;
-        }
-        public Driver Driver
-        {
-            get => _Driver;
-            set => _Driver = value;
-        }
+        public Route Route { get; set; }
+        public Driver Driver { get; set; }
 
-        public DateTime StartDate
-        {
-            get => _StartDate; 
-            set => _StartDate = value;
-        }
+        /// <summary>
+        /// Дата отправки
+        /// </summary>
+        public DateTime StartDate { get; set; }
 
-        public DateTime EndDate
-        {
-            get => _EndDate; 
-            set => _EndDate = value;
-        }
+        /// <summary>
+        /// Дата возвращения
+        /// </summary>
+        public DateTime EndDate { get; set; }
 
-        public double Award
-        {
-            get => _Award; 
-            set => _Award = value;
-        }
+        /// <summary>
+        /// Премия
+        /// </summary>
+        public double Award { get; set; }
         public bool isValid {
             get
             {
-                if (_Route == null) return false;
-                if (_Driver == null) return false;
-                if (_StartDate == null || _StartDate < DateTime.Now) return false;
-                if (_EndDate == null || _EndDate < DateTime.Now) return false;
-                if (_StartDate >= _EndDate) return false;
-                if (_Award < 1) return false;
+                if (Route == null) return false;
+                if (Driver == null) return false;
+                if (StartDate == null || StartDate < DateTime.Now) return false;
+                if (EndDate == null || EndDate < DateTime.Now) return false;
+                if (StartDate >= EndDate) return false;
+                if (Award < 1) return false;
                 return true;
             }
         }
         public DoneWork() { }
 
         public DoneWork(Route route, Driver driver, DateTime startDate, DateTime endDate, double award)
-        { // как правильно обращаться, сразу к локальной переменной класса или через сеттер 
-            _Route = route;
-            _Driver = driver;
-            _StartDate = startDate;
-            _EndDate = endDate;
-            _Award = award;
+        {
+            Route = route;
+            Driver = driver;
+            StartDate = startDate;
+            EndDate = endDate;
+            Award = award;
         }
 
         public override string ToString()
-        { // как правильно обращаться, сразу к локальной переменной класса или через геттер 
+        {
             return
-                $"Маршрут:\n\n{_Route}\nВодитель:\n\n{_Driver}\nДата: {_StartDate} - {_EndDate}\nПремия: {_Award}\n\n";
+                $"Маршрут:\n\n{Route}\nВодитель:\n\n{Driver}\nДата: {StartDate} - {EndDate}\nПремия: {Award}\n\n";
         }
     }
 }

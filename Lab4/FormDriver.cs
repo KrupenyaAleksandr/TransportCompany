@@ -21,7 +21,7 @@ namespace Lab4
             lastNameTextBox.Text = Driver.LastName;
             firstNameTextBox.Text = Driver.FirstName;
             middleNameTextBox.Text = Driver.MiddleName;
-            expirienceTextBox.Text = Convert.ToString(Driver.Experience);
+            experienceNumericUpDown.Value = Driver.Experience;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -35,11 +35,8 @@ namespace Lab4
                     if (middleNameTextBox.Text != "")
                     {
                         Driver.MiddleName = middleNameTextBox.Text;
-                        if (int.TryParse(expirienceTextBox.Text, out int exp))
-                        {
-                            Driver.Experience = exp;
-                            DialogResult = DialogResult.OK;
-                        }
+                        Driver.Experience = Convert.ToInt32(experienceNumericUpDown.Value);
+                        DialogResult = DialogResult.OK;
                     }
                 }
             }

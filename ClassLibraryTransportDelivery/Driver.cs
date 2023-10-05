@@ -7,45 +7,39 @@ using System.Xml.Linq;
 
 namespace ClassLibraryTransportDelivery
 {
+    /// <summary>
+    /// Водитель
+    /// </summary>
     public class Driver : IValidatable
     {
-        private string _FirstName;
-        private string _LastName;
-        private string _MiddleName;
-        private int _Experience;
+        /// <summary>
+        /// Имя
+        /// </summary>
+        public string FirstName { get; set; } = "";
+        
+        /// <summary>
+        /// Фамилия
+        /// </summary>
+        public string LastName { get; set; } = "";
 
-        public string FirstName
-        {
-            get => _FirstName;
-            set => _FirstName = value;
-        } 
+        /// <summary>
+        /// Отчество
+        /// </summary>
+        public string MiddleName { get; set; } = "";
 
-        public string LastName
-        {
-            get => _LastName;
-            set => _LastName = value;
-        }
-
-        public string MiddleName
-        {
-            get => _MiddleName;
-            set => _MiddleName = value;
-        }
-
-        public int Experience
-        {
-            get => _Experience;
-            set => _Experience = value;
-        }
+        /// <summary>
+        /// Стаж
+        /// </summary>
+        public int Experience { get; set; } = 1;
 
         public bool isValid
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(_FirstName)) return false;
-                if (string.IsNullOrWhiteSpace(_LastName)) return false;
-                if (string.IsNullOrWhiteSpace(_MiddleName)) return false;
-                if (_Experience <= 0) return false;
+                if (string.IsNullOrWhiteSpace(FirstName)) return false;
+                if (string.IsNullOrWhiteSpace(LastName)) return false;
+                if (string.IsNullOrWhiteSpace(MiddleName)) return false;
+                if (Experience <= 0) return false;
                 return true;
             }
         }
@@ -62,7 +56,7 @@ namespace ClassLibraryTransportDelivery
         public override string ToString()
         {
             return
-                $"Фамилия: {_LastName}\nИмя: {_FirstName}\nОтчество: {_MiddleName}\nСтаж: {_Experience}\n";
+                $"Фамилия: {LastName}\nИмя: {FirstName}\nОтчество: {MiddleName}\nСтаж: {Experience}\n";
         }
     }
 }
