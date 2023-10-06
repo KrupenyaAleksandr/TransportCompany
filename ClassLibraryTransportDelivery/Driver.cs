@@ -79,7 +79,8 @@ namespace ClassLibraryTransportDelivery
         public override string ToString()
         {
             return
-                $"Фамилия: {LastName}\nИмя: {FirstName}\nОтчество: {MiddleName}\nСтаж: {Experience}\n";
+                //$"Фамилия: {LastName}\n\rИмя: {FirstName}\n\rОтчество: {MiddleName}\n\rСтаж: {Experience}\n";
+                $"{LastName} {FirstName} {MiddleName}";
         }
     }
 }

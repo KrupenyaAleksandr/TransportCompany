@@ -46,26 +46,26 @@
             // 
             // fromTextBox
             // 
-            this.fromTextBox.Location = new System.Drawing.Point(288, 41);
-            this.fromTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fromTextBox.Location = new System.Drawing.Point(157, 22);
+            this.fromTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fromTextBox.Name = "fromTextBox";
-            this.fromTextBox.Size = new System.Drawing.Size(239, 29);
+            this.fromTextBox.Size = new System.Drawing.Size(132, 20);
             this.fromTextBox.TabIndex = 0;
             // 
             // toTextBox
             // 
-            this.toTextBox.Location = new System.Drawing.Point(288, 116);
-            this.toTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.toTextBox.Location = new System.Drawing.Point(157, 63);
+            this.toTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.toTextBox.Name = "toTextBox";
-            this.toTextBox.Size = new System.Drawing.Size(239, 29);
+            this.toTextBox.Size = new System.Drawing.Size(132, 20);
             this.toTextBox.TabIndex = 1;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(579, 378);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Location = new System.Drawing.Point(316, 205);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(200, 52);
+            this.saveButton.Size = new System.Drawing.Size(109, 28);
             this.saveButton.TabIndex = 5;
             this.saveButton.Text = "Сохранить";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -74,57 +74,53 @@
             // fromLabel
             // 
             this.fromLabel.AutoSize = true;
-            this.fromLabel.Location = new System.Drawing.Point(68, 46);
-            this.fromLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.fromLabel.Location = new System.Drawing.Point(37, 25);
             this.fromLabel.Name = "fromLabel";
-            this.fromLabel.Size = new System.Drawing.Size(194, 25);
+            this.fromLabel.Size = new System.Drawing.Size(105, 13);
             this.fromLabel.TabIndex = 6;
             this.fromLabel.Text = "Пункт отправления";
             // 
             // toLabel
             // 
             this.toLabel.AutoSize = true;
-            this.toLabel.Location = new System.Drawing.Point(68, 122);
-            this.toLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.toLabel.Location = new System.Drawing.Point(37, 66);
             this.toLabel.Name = "toLabel";
-            this.toLabel.Size = new System.Drawing.Size(181, 25);
+            this.toLabel.Size = new System.Drawing.Size(99, 13);
             this.toLabel.TabIndex = 7;
             this.toLabel.Text = "Пункт назначения";
             // 
             // distanceLabel
             // 
             this.distanceLabel.AutoSize = true;
-            this.distanceLabel.Location = new System.Drawing.Point(94, 198);
-            this.distanceLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.distanceLabel.Location = new System.Drawing.Point(51, 107);
             this.distanceLabel.Name = "distanceLabel";
-            this.distanceLabel.Size = new System.Drawing.Size(121, 25);
+            this.distanceLabel.Size = new System.Drawing.Size(67, 13);
             this.distanceLabel.TabIndex = 8;
             this.distanceLabel.Text = "Расстояние";
             // 
             // tripTimeInDaysLabel
             // 
             this.tripTimeInDaysLabel.AutoSize = true;
-            this.tripTimeInDaysLabel.Location = new System.Drawing.Point(68, 273);
-            this.tripTimeInDaysLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.tripTimeInDaysLabel.Location = new System.Drawing.Point(37, 148);
             this.tripTimeInDaysLabel.Name = "tripTimeInDaysLabel";
-            this.tripTimeInDaysLabel.Size = new System.Drawing.Size(184, 25);
+            this.tripTimeInDaysLabel.Size = new System.Drawing.Size(98, 13);
             this.tripTimeInDaysLabel.TabIndex = 9;
             this.tripTimeInDaysLabel.Text = "Время в пути (дн.)";
             // 
             // paymentLabel
             // 
             this.paymentLabel.AutoSize = true;
-            this.paymentLabel.Location = new System.Drawing.Point(110, 349);
-            this.paymentLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.paymentLabel.Location = new System.Drawing.Point(60, 189);
             this.paymentLabel.Name = "paymentLabel";
-            this.paymentLabel.Size = new System.Drawing.Size(82, 25);
+            this.paymentLabel.Size = new System.Drawing.Size(44, 13);
             this.paymentLabel.TabIndex = 10;
             this.paymentLabel.Text = "Оплата";
             // 
             // distanceNumericUpDown
             // 
             this.distanceNumericUpDown.DecimalPlaces = 1;
-            this.distanceNumericUpDown.Location = new System.Drawing.Point(288, 196);
+            this.distanceNumericUpDown.Location = new System.Drawing.Point(157, 106);
+            this.distanceNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.distanceNumericUpDown.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -136,7 +132,7 @@
             0,
             0});
             this.distanceNumericUpDown.Name = "distanceNumericUpDown";
-            this.distanceNumericUpDown.Size = new System.Drawing.Size(239, 29);
+            this.distanceNumericUpDown.Size = new System.Drawing.Size(130, 20);
             this.distanceNumericUpDown.TabIndex = 11;
             this.distanceNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.distanceNumericUpDown.ThousandsSeparator = true;
@@ -148,7 +144,8 @@
             // 
             // tripTimeNumericUpDown
             // 
-            this.tripTimeNumericUpDown.Location = new System.Drawing.Point(288, 271);
+            this.tripTimeNumericUpDown.Location = new System.Drawing.Point(157, 147);
+            this.tripTimeNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tripTimeNumericUpDown.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -160,7 +157,7 @@
             0,
             0});
             this.tripTimeNumericUpDown.Name = "tripTimeNumericUpDown";
-            this.tripTimeNumericUpDown.Size = new System.Drawing.Size(239, 29);
+            this.tripTimeNumericUpDown.Size = new System.Drawing.Size(130, 20);
             this.tripTimeNumericUpDown.TabIndex = 12;
             this.tripTimeNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tripTimeNumericUpDown.ThousandsSeparator = true;
@@ -172,24 +169,24 @@
             // 
             // paymentNumericUpDown
             // 
-            this.paymentNumericUpDown.DecimalPlaces = 3;
-            this.paymentNumericUpDown.Location = new System.Drawing.Point(288, 347);
+            this.paymentNumericUpDown.Location = new System.Drawing.Point(157, 188);
+            this.paymentNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.paymentNumericUpDown.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
             this.paymentNumericUpDown.Name = "paymentNumericUpDown";
-            this.paymentNumericUpDown.Size = new System.Drawing.Size(239, 29);
+            this.paymentNumericUpDown.Size = new System.Drawing.Size(130, 20);
             this.paymentNumericUpDown.TabIndex = 13;
             this.paymentNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.paymentNumericUpDown.ThousandsSeparator = true;
             // 
             // FormRoute
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 450);
+            this.ClientSize = new System.Drawing.Size(436, 244);
             this.Controls.Add(this.paymentNumericUpDown);
             this.Controls.Add(this.tripTimeNumericUpDown);
             this.Controls.Add(this.distanceNumericUpDown);
@@ -201,7 +198,7 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.toTextBox);
             this.Controls.Add(this.fromTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormRoute";
             this.Text = "Маршрут";
             ((System.ComponentModel.ISupportInitialize)(this.distanceNumericUpDown)).EndInit();

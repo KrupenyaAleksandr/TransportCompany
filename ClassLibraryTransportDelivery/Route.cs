@@ -78,7 +78,8 @@ namespace ClassLibraryTransportDelivery
         public override string ToString()
         {
             return
-                $"Название: {Name}\nДистанция: {Distance}\nВремя в пути: {TripTimeInDays}\nОплата: {Payment}\n";
+                //$"Название: {Name}\nДистанция: {Distance}\nВремя в пути: {TripTimeInDays}\nОплата: {Payment}\n";
+                $"{Name}";
         }
     }
 }
