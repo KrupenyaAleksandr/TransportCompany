@@ -123,7 +123,6 @@ namespace Lab4
         private void UpdateDoneWorks()
         {
             doneWorkListView.Items.Clear();
-            string tmp = "";
             foreach (var donework in TransportCompany.DoneWorks)
             {
                 var listViewItem = new ListViewItem
