@@ -79,8 +79,9 @@
             // toolStripMenuFileItem1
             // 
             this.toolStripMenuFileItem1.Name = "toolStripMenuFileItem1";
-            this.toolStripMenuFileItem1.Size = new System.Drawing.Size(109, 22);
+            this.toolStripMenuFileItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuFileItem1.Text = "Выход";
+            this.toolStripMenuFileItem1.Click += new System.EventHandler(this.toolStripMenuFileItem1_Click);
             // 
             // toolStripMenu
             // 
@@ -155,14 +156,14 @@
             // toolStripMenuDoneWorkAdd
             // 
             this.toolStripMenuDoneWorkAdd.Name = "toolStripMenuDoneWorkAdd";
-            this.toolStripMenuDoneWorkAdd.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuDoneWorkAdd.Size = new System.Drawing.Size(154, 22);
             this.toolStripMenuDoneWorkAdd.Text = "Добавить";
             this.toolStripMenuDoneWorkAdd.Click += new System.EventHandler(this.toolStripMenuDoneWorkAdd_Click);
             // 
             // toolStripMenuDoneWorkEdit
             // 
             this.toolStripMenuDoneWorkEdit.Name = "toolStripMenuDoneWorkEdit";
-            this.toolStripMenuDoneWorkEdit.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuDoneWorkEdit.Size = new System.Drawing.Size(154, 22);
             this.toolStripMenuDoneWorkEdit.Text = "Редактировать";
             this.toolStripMenuDoneWorkEdit.Click += new System.EventHandler(this.toolStripMenuDoneWorkEdit_Click);
             // 
@@ -216,6 +217,7 @@
             this.routeListView.TabIndex = 1;
             this.routeListView.UseCompatibleStateImageBehavior = false;
             this.routeListView.View = System.Windows.Forms.View.Details;
+            this.routeListView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.routeListView_KeyUp);
             // 
             // routeColumnHeader
             // 
@@ -265,6 +267,7 @@
             this.driverListView.TabIndex = 1;
             this.driverListView.UseCompatibleStateImageBehavior = false;
             this.driverListView.View = System.Windows.Forms.View.Details;
+            this.driverListView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.driverListView_KeyUp);
             // 
             // driverLastNameColumnHeader
             // 
@@ -314,6 +317,7 @@
             this.doneWorkListView.TabIndex = 0;
             this.doneWorkListView.UseCompatibleStateImageBehavior = false;
             this.doneWorkListView.View = System.Windows.Forms.View.Details;
+            this.doneWorkListView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.doneWorkListView_KeyUp);
             // 
             // routeNameColumnHeader
             // 

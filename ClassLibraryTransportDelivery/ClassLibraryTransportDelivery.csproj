@@ -44,6 +44,9 @@
   <ItemGroup>
     <Compile Include="DoneWork.cs" />
     <Compile Include="Driver.cs" />
+    <Compile Include="Exception\InvalidDoneWorkException.cs" />
+    <Compile Include="Exception\InvalidDriverException.cs" />
+    <Compile Include="Exception\InvalidRouteException.cs" />
     <Compile Include="IValidatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Route.cs" />

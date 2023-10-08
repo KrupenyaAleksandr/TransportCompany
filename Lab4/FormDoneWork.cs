@@ -13,27 +13,69 @@ namespace Lab4
 {
     public partial class FormDoneWork : Form
     {
-        public DoneWork DoneWork { get; }
-        public FormDoneWork(DoneWork doneWork)
+        private DoneWork _doneWork;
+        public DoneWork DoneWork {
+            get {  return _doneWork; }
+            set
+            {
+                _doneWork = value;
+                driverComboBox.SelectedItem = _doneWork.Driver;
+                routeComboBox.SelectedItem = _doneWork.Route;
+                startDateTimePicker.Value = _doneWork.StartDate;
+                awardNumericUpDown.Value = Convert.ToDecimal(_doneWork.Award);
+            }
+        }
+        private readonly TransportCompany _transportCompany = TransportCompany.Instance;
+        public FormDoneWork()
         {
             InitializeComponent();
-            DoneWork = doneWork;
-            foreach(var item in TransportCompany.Drivers)
+            _transportCompany.RouteAdded += _transportCompany_RouteAdded;
+            _transportCompany.RouteRemoved += _transportCompany_RouteRemoved;
+            _transportCompany.DriverAdded += _transportCompany_DriverAdded;
+            _transportCompany.DriverRemoved += _transportCompany_DriverRemoved;
+            foreach (var driver in _transportCompany.Drivers)
             {
-                var driver = item.Value;
                 driverComboBox.Items.Add(driver);
             }
-            foreach(var item in TransportCompany.Routes)
+            foreach(var route in _transportCompany.Routes)
             {
-                var route = item.Value;
                 routeComboBox.Items.Add(route);
             }
-            driverComboBox.SelectedItem = doneWork.Driver;
-            routeComboBox.SelectedItem = doneWork.Route;
-            startDateTimePicker.Value = doneWork.StartDate;
-            awardNumericUpDown.Value = Convert.ToDecimal(doneWork.Award);
         }
-
+        private void _transportCompany_RouteAdded(object sender, EventArgs e)
+        {
+            routeComboBox.Items.Add(sender);
+        }
+        private void _transportCompany_RouteRemoved(object sender, EventArgs e)
+        {
+            int key = Convert.ToInt32(sender);
+            for (int i = 0; i < routeComboBox.Items.Count; ++i)
+            {
+                var route = routeComboBox.Items[i] as Route;
+                if (route?.RouteId == key)
+                {
+                    routeComboBox.Items.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+        private void _transportCompany_DriverAdded(object sender, EventArgs e)
+        {
+            driverComboBox.Items.Add(sender);
+        }
+        private void _transportCompany_DriverRemoved(object sender, EventArgs e)
+        {
+            int key = Convert.ToInt32(sender);
+            for (int i = 0; i < driverComboBox.Items.Count; ++i)
+            {
+                var driver = driverComboBox.Items[i] as Driver;
+                if (driver?.DriverId == key)
+                {
+                    driverComboBox.Items.RemoveAt(i);
+                    break;
+                }
+            }
+        }
         private void saveButton_Click(object sender, EventArgs e)
         {
             DoneWork.Driver = driverComboBox.SelectedItem as Driver;

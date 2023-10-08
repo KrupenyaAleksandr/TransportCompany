@@ -53,7 +53,7 @@ namespace ClassLibraryTransportDelivery
         {
             get
             {
-                if (Name == null) return false;
+                if (Name == null || (Name.From == String.Empty || Name.To == String.Empty)) return false;
                 if (Distance <= 0) return false;
                 if (TripTimeInDays <= 0) return false;
                 if (Payment <= 0) return false;
