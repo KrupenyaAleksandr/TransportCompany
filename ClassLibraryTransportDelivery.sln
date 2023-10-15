@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab4", "Lab4\Lab4.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryTransportDelivery", "ClassLibraryTransportDelivery\ClassLibraryTransportDelivery.csproj", "{5CC68BA0-D1BA-460D-8AC0-AE9A0A601EA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsControlLibraryTransportCompany", "WindowsFormsControlLibraryTransportCompany\WindowsFormsControlLibraryTransportCompany.csproj", "{C5D6B354-F6FE-4896-BA72-00E2CA23BECA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5CC68BA0-D1BA-460D-8AC0-AE9A0A601EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CC68BA0-D1BA-460D-8AC0-AE9A0A601EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CC68BA0-D1BA-460D-8AC0-AE9A0A601EA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D6B354-F6FE-4896-BA72-00E2CA23BECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D6B354-F6FE-4896-BA72-00E2CA23BECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D6B354-F6FE-4896-BA72-00E2CA23BECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D6B354-F6FE-4896-BA72-00E2CA23BECA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

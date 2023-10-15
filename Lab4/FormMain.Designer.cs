@@ -55,17 +55,10 @@
             this.driverMiddleNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.driverExperienceColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.doneWorksTabPage = new System.Windows.Forms.TabPage();
-            this.doneWorkListView = new System.Windows.Forms.ListView();
-            this.routeNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.driverFIOСolumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.startDateСolumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.endDateColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.awardColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStripMenu.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.routesTabPage.SuspendLayout();
             this.driversTabPage.SuspendLayout();
-            this.doneWorksTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripMenuFile
@@ -79,7 +72,7 @@
             // toolStripMenuFileItem1
             // 
             this.toolStripMenuFileItem1.Name = "toolStripMenuFileItem1";
-            this.toolStripMenuFileItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuFileItem1.Size = new System.Drawing.Size(109, 22);
             this.toolStripMenuFileItem1.Text = "Выход";
             this.toolStripMenuFileItem1.Click += new System.EventHandler(this.toolStripMenuFileItem1_Click);
             // 
@@ -94,7 +87,7 @@
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.toolStripMenu.Size = new System.Drawing.Size(625, 24);
+            this.toolStripMenu.Size = new System.Drawing.Size(604, 24);
             this.toolStripMenu.TabIndex = 1;
             this.toolStripMenu.Text = "Файл";
             // 
@@ -173,7 +166,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 24);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(625, 220);
+            this.listView1.Size = new System.Drawing.Size(604, 257);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -186,7 +179,7 @@
             this.tabControlMain.Location = new System.Drawing.Point(0, 24);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(625, 220);
+            this.tabControlMain.Size = new System.Drawing.Size(604, 257);
             this.tabControlMain.TabIndex = 3;
             // 
             // routesTabPage
@@ -290,64 +283,19 @@
             // 
             // doneWorksTabPage
             // 
-            this.doneWorksTabPage.Controls.Add(this.doneWorkListView);
             this.doneWorksTabPage.Location = new System.Drawing.Point(4, 22);
             this.doneWorksTabPage.Name = "doneWorksTabPage";
             this.doneWorksTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.doneWorksTabPage.Size = new System.Drawing.Size(617, 194);
+            this.doneWorksTabPage.Size = new System.Drawing.Size(596, 231);
             this.doneWorksTabPage.TabIndex = 2;
             this.doneWorksTabPage.Text = "Выполненные заказы";
             this.doneWorksTabPage.UseVisualStyleBackColor = true;
-            // 
-            // doneWorkListView
-            // 
-            this.doneWorkListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.routeNameColumnHeader,
-            this.driverFIOСolumnHeader,
-            this.startDateСolumnHeader,
-            this.endDateColumnHeader,
-            this.awardColumnHeader});
-            this.doneWorkListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.doneWorkListView.FullRowSelect = true;
-            this.doneWorkListView.GridLines = true;
-            this.doneWorkListView.HideSelection = false;
-            this.doneWorkListView.Location = new System.Drawing.Point(3, 3);
-            this.doneWorkListView.Name = "doneWorkListView";
-            this.doneWorkListView.Size = new System.Drawing.Size(611, 188);
-            this.doneWorkListView.TabIndex = 0;
-            this.doneWorkListView.UseCompatibleStateImageBehavior = false;
-            this.doneWorkListView.View = System.Windows.Forms.View.Details;
-            this.doneWorkListView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.doneWorkListView_KeyUp);
-            // 
-            // routeNameColumnHeader
-            // 
-            this.routeNameColumnHeader.Text = "Маршрут";
-            this.routeNameColumnHeader.Width = 120;
-            // 
-            // driverFIOСolumnHeader
-            // 
-            this.driverFIOСolumnHeader.Text = "ФИО Водителя";
-            this.driverFIOСolumnHeader.Width = 185;
-            // 
-            // startDateСolumnHeader
-            // 
-            this.startDateСolumnHeader.Text = "Дата отправки";
-            this.startDateСolumnHeader.Width = 110;
-            // 
-            // endDateColumnHeader
-            // 
-            this.endDateColumnHeader.Text = "Дата прибытия";
-            this.endDateColumnHeader.Width = 110;
-            // 
-            // awardColumnHeader
-            // 
-            this.awardColumnHeader.Text = "Премия";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 244);
+            this.ClientSize = new System.Drawing.Size(604, 281);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.toolStripMenu);
@@ -359,7 +307,6 @@
             this.tabControlMain.ResumeLayout(false);
             this.routesTabPage.ResumeLayout(false);
             this.driversTabPage.ResumeLayout(false);
-            this.doneWorksTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,18 +335,12 @@
         private System.Windows.Forms.ColumnHeader routeColumnHeader;
         private System.Windows.Forms.ListView driverListView;
         private System.Windows.Forms.ColumnHeader driverLastNameColumnHeader;
-        private System.Windows.Forms.ListView doneWorkListView;
-        private System.Windows.Forms.ColumnHeader routeNameColumnHeader;
-        private System.Windows.Forms.ColumnHeader driverFIOСolumnHeader;
-        private System.Windows.Forms.ColumnHeader startDateСolumnHeader;
-        private System.Windows.Forms.ColumnHeader endDateColumnHeader;
         private System.Windows.Forms.ColumnHeader distanceColumnHeader;
         private System.Windows.Forms.ColumnHeader tripTimeColumnHeader;
         private System.Windows.Forms.ColumnHeader paymentColumnHeader;
         private System.Windows.Forms.ColumnHeader driverFirstNameColumnHeader;
         private System.Windows.Forms.ColumnHeader driverMiddleNameColumnHeader;
         private System.Windows.Forms.ColumnHeader driverExperienceColumnHeader;
-        private System.Windows.Forms.ColumnHeader awardColumnHeader;
     }
 }
 

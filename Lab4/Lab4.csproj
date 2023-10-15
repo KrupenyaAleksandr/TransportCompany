@@ -116,6 +116,10 @@
       <Project>{5cc68ba0-d1ba-460d-8ac0-ae9a0a601ea4}</Project>
       <Name>ClassLibraryTransportDelivery</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsControlLibraryTransportCompany\WindowsFormsControlLibraryTransportCompany.csproj">
+      <Project>{c5d6b354-f6fe-4896-ba72-00e2ca23beca}</Project>
+      <Name>WindowsFormsControlLibraryTransportCompany</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

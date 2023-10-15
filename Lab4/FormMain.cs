@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibraryTransportDelivery;
+using WindowsFormsControlLibraryTransportCompany;
 
 namespace Lab4
 {
@@ -90,26 +91,21 @@ namespace Lab4
             var doneWork = sender as DoneWork;
             if (doneWork != null)
             {
-                var listViewItem = new ListViewItem
+                UserControlDoneWork userControl = new UserControlDoneWork(doneWork)
                 {
-                    Tag = doneWork,
-                    Text = doneWork.Route.Name.ToString()
+                    Dock = DockStyle.Top
                 };
-                listViewItem.SubItems.Add(doneWork.Driver.ToString());
-                listViewItem.SubItems.Add(doneWork.StartDate.ToShortDateString());
-                listViewItem.SubItems.Add(doneWork.EndDate.ToShortDateString());
-                listViewItem.SubItems.Add(doneWork.Award.ToString());
-                doneWorkListView.Items.Add(listViewItem);
+                doneWorksTabPage.Controls.Add(userControl);
             }
         }
         private void _transportCompany_DoneWorkRemoved(object sender, EventArgs e)
         {
             var doneWork = sender as DoneWork;
-            for (int i = 0; i < doneWorkListView.Items.Count; ++i)
+            for (int i = 0; i < doneWorksTabPage.Controls.Count; ++i)
             {
-                if ((DoneWork)doneWorkListView.Items[i].Tag == doneWork)
+                if ((doneWorksTabPage.Controls[i] as UserControlDoneWork)?.DoneWork == doneWork)
                 {
-                    doneWorkListView.Items.RemoveAt(i);
+                    doneWorksTabPage.Controls.RemoveAt(i);
                     break;
                 }
             }
@@ -210,17 +206,22 @@ namespace Lab4
         {
             try
             {
-                var doneWork = doneWorkListView.SelectedItems[0].Tag as DoneWork;
-                _formDoneWork.DoneWork = doneWork;
-                if (_formDoneWork.ShowDialog() == DialogResult.OK)
+                for (int i = 0; i < doneWorksTabPage.Controls.Count; i++)
                 {
-                    doneWork = _formDoneWork.DoneWork;
-                    var listViewItem = doneWorkListView.SelectedItems[0];
-                    listViewItem.Text = doneWork.Route.Name.ToString();
-                    listViewItem.SubItems[1].Text = doneWork.Driver.ToString();
-                    listViewItem.SubItems[2].Text = doneWork.StartDate.ToShortDateString();
-                    listViewItem.SubItems[3].Text = doneWork.EndDate.ToShortDateString();
-                    listViewItem.SubItems[4].Text = doneWork.Award.ToString();
+                    var userControl = doneWorksTabPage.Controls[i] as UserControlDoneWork;
+                    if (userControl != null)
+                    {
+                        if (userControl.Selected)
+                        {
+                            var donework = userControl.DoneWork;
+                            _formDoneWork.DoneWork = donework;
+                            if (_formDoneWork.ShowDialog() == DialogResult.OK)
+                            {
+                                userControl.Refresh();
+                            }
+                            break;
+                        }
+                    }
                 }
             }
             catch (Exception)
@@ -266,24 +267,6 @@ namespace Lab4
                 catch (Exception)
                 {
                     MessageBox.Show("Не выбрана строка с водителем");
-                }
-            }
-        }
-        private void doneWorkListView_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Delete)
-            {
-                try
-                {
-                    var doneWork = doneWorkListView.SelectedItems[0].Tag as DoneWork;
-                    if (doneWork != null)
-                    {
-                        _transportCompany.RemoveDoneWork(doneWork);
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Не выбрана строка с выполненным заказом");
                 }
             }
         }

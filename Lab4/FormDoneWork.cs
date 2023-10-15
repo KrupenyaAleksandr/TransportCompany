@@ -80,12 +80,10 @@ namespace Lab4
         {
             DoneWork.Driver = driverComboBox.SelectedItem as Driver;
             DoneWork.Route = routeComboBox.SelectedItem as Route;
-            if (startDateTimePicker.Value >= DateTime.Now) {
-                DoneWork.StartDate = startDateTimePicker.Value;
-                DoneWork.EndDate = DoneWork.StartDate.AddDays(Convert.ToDouble(DoneWork.Route.TripTimeInDays));
-                DoneWork.Award = Convert.ToDouble(awardNumericUpDown.Value);
-                DialogResult = DialogResult.OK;
-            }
+            DoneWork.StartDate = startDateTimePicker.Value;
+            DoneWork.EndDate = DoneWork.StartDate.AddDays(Convert.ToDouble(DoneWork.Route.TripTimeInDays));
+            DoneWork.Award = Convert.ToDouble(awardNumericUpDown.Value);
+            DialogResult = DialogResult.OK;
         }
 
     }

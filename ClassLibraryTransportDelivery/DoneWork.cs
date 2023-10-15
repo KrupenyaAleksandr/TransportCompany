@@ -31,8 +31,8 @@ namespace ClassLibraryTransportDelivery
             {
                 if (Route == null) return false;
                 if (Driver == null) return false;
-                if (StartDate == null || StartDate < DateTime.Now) return false;
-                if (EndDate == null || EndDate < DateTime.Now) return false;
+                if (StartDate == null) return false;
+                if (EndDate == null) return false;
                 if (StartDate >= EndDate) return false;
                 if (Award < 1) return false;
                 return true;
