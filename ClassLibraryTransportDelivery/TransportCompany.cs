@@ -11,6 +11,7 @@ namespace ClassLibraryTransportDelivery
     /// <summary>
     /// Транспортная компания
     /// </summary>
+    [Serializable]
     public class TransportCompany
     {
         private static TransportCompany _instance;

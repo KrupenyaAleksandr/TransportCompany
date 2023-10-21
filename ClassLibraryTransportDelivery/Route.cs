@@ -9,6 +9,7 @@ namespace ClassLibraryTransportDelivery
     /// <summary>
     /// Маршрут
     /// </summary>
+    [Serializable]
     public class Route : IValidatable
     {
         /// <summary>
@@ -19,12 +20,16 @@ namespace ClassLibraryTransportDelivery
         /// <summary>
         /// новый id маршрута
         /// </summary>
-        private static int NewRouteId
+        public static int NewRouteId
         {
             get
             {
                 _NewRouteId++;
                 return _NewRouteId;
+            }
+            set
+            { 
+                _NewRouteId = value; 
             }
         }
 

@@ -55,6 +55,16 @@
             this.driverMiddleNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.driverExperienceColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.doneWorksTabPage = new System.Windows.Forms.TabPage();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savexMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savejSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveBinaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadxMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadjSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadBinaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialogMain = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialogMain = new System.Windows.Forms.OpenFileDialog();
             this.toolStripMenu.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.routesTabPage.SuspendLayout();
@@ -64,6 +74,8 @@
             // toolStripMenuFile
             // 
             this.toolStripMenuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.openToolStripMenuItem,
             this.toolStripMenuFileItem1});
             this.toolStripMenuFile.Name = "toolStripMenuFile";
             this.toolStripMenuFile.Size = new System.Drawing.Size(48, 22);
@@ -72,7 +84,7 @@
             // toolStripMenuFileItem1
             // 
             this.toolStripMenuFileItem1.Name = "toolStripMenuFileItem1";
-            this.toolStripMenuFileItem1.Size = new System.Drawing.Size(109, 22);
+            this.toolStripMenuFileItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuFileItem1.Text = "Выход";
             this.toolStripMenuFileItem1.Click += new System.EventHandler(this.toolStripMenuFileItem1_Click);
             // 
@@ -188,7 +200,7 @@
             this.routesTabPage.Location = new System.Drawing.Point(4, 22);
             this.routesTabPage.Name = "routesTabPage";
             this.routesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.routesTabPage.Size = new System.Drawing.Size(617, 194);
+            this.routesTabPage.Size = new System.Drawing.Size(596, 231);
             this.routesTabPage.TabIndex = 0;
             this.routesTabPage.Text = "Маршруты";
             this.routesTabPage.UseVisualStyleBackColor = true;
@@ -206,7 +218,7 @@
             this.routeListView.HideSelection = false;
             this.routeListView.Location = new System.Drawing.Point(3, 3);
             this.routeListView.Name = "routeListView";
-            this.routeListView.Size = new System.Drawing.Size(611, 188);
+            this.routeListView.Size = new System.Drawing.Size(590, 225);
             this.routeListView.TabIndex = 1;
             this.routeListView.UseCompatibleStateImageBehavior = false;
             this.routeListView.View = System.Windows.Forms.View.Details;
@@ -238,7 +250,7 @@
             this.driversTabPage.Location = new System.Drawing.Point(4, 22);
             this.driversTabPage.Name = "driversTabPage";
             this.driversTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.driversTabPage.Size = new System.Drawing.Size(617, 194);
+            this.driversTabPage.Size = new System.Drawing.Size(596, 231);
             this.driversTabPage.TabIndex = 1;
             this.driversTabPage.Text = "Водители";
             this.driversTabPage.UseVisualStyleBackColor = true;
@@ -256,7 +268,7 @@
             this.driverListView.HideSelection = false;
             this.driverListView.Location = new System.Drawing.Point(3, 3);
             this.driverListView.Name = "driverListView";
-            this.driverListView.Size = new System.Drawing.Size(611, 188);
+            this.driverListView.Size = new System.Drawing.Size(590, 225);
             this.driverListView.TabIndex = 1;
             this.driverListView.UseCompatibleStateImageBehavior = false;
             this.driverListView.View = System.Windows.Forms.View.Details;
@@ -290,6 +302,72 @@
             this.doneWorksTabPage.TabIndex = 2;
             this.doneWorksTabPage.Text = "Выполненные заказы";
             this.doneWorksTabPage.UseVisualStyleBackColor = true;
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.savexMLToolStripMenuItem,
+            this.savejSONToolStripMenuItem,
+            this.saveBinaryToolStripMenuItem});
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Сохранить";
+            // 
+            // savexMLToolStripMenuItem
+            // 
+            this.savexMLToolStripMenuItem.Name = "savexMLToolStripMenuItem";
+            this.savexMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.savexMLToolStripMenuItem.Text = "XML";
+            this.savexMLToolStripMenuItem.Click += new System.EventHandler(this.savexMLToolStripMenuItem_Click);
+            // 
+            // savejSONToolStripMenuItem
+            // 
+            this.savejSONToolStripMenuItem.Name = "savejSONToolStripMenuItem";
+            this.savejSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.savejSONToolStripMenuItem.Text = "JSON";
+            this.savejSONToolStripMenuItem.Click += new System.EventHandler(this.saveJSONToolStripMenuItem_Click);
+            // 
+            // saveBinaryToolStripMenuItem
+            // 
+            this.saveBinaryToolStripMenuItem.Name = "saveBinaryToolStripMenuItem";
+            this.saveBinaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveBinaryToolStripMenuItem.Text = "Двоичный";
+            this.saveBinaryToolStripMenuItem.Click += new System.EventHandler(this.saveBinaryToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadxMLToolStripMenuItem,
+            this.loadjSONToolStripMenuItem,
+            this.loadBinaryToolStripMenuItem});
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Загрузить";
+            // 
+            // loadxMLToolStripMenuItem
+            // 
+            this.loadxMLToolStripMenuItem.Name = "loadxMLToolStripMenuItem";
+            this.loadxMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadxMLToolStripMenuItem.Text = "XML";
+            this.loadxMLToolStripMenuItem.Click += new System.EventHandler(this.loadXMLToolStripMenuItem_Click);
+            // 
+            // loadjSONToolStripMenuItem
+            // 
+            this.loadjSONToolStripMenuItem.Name = "loadjSONToolStripMenuItem";
+            this.loadjSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadjSONToolStripMenuItem.Text = "JSON";
+            this.loadjSONToolStripMenuItem.Click += new System.EventHandler(this.loadJSONToolStripMenuItem_Click);
+            // 
+            // loadBinaryToolStripMenuItem
+            // 
+            this.loadBinaryToolStripMenuItem.Name = "loadBinaryToolStripMenuItem";
+            this.loadBinaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadBinaryToolStripMenuItem.Text = "Двоичный";
+            this.loadBinaryToolStripMenuItem.Click += new System.EventHandler(this.loadBinaryToolStripMenuItem_Click);
+            // 
+            // openFileDialogMain
+            // 
+            this.openFileDialogMain.FileName = "openFileDialog1";
             // 
             // FormMain
             // 
@@ -341,6 +419,16 @@
         private System.Windows.Forms.ColumnHeader driverFirstNameColumnHeader;
         private System.Windows.Forms.ColumnHeader driverMiddleNameColumnHeader;
         private System.Windows.Forms.ColumnHeader driverExperienceColumnHeader;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem savexMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem savejSONToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveBinaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadxMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadjSONToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadBinaryToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogMain;
+        private System.Windows.Forms.OpenFileDialog openFileDialogMain;
     }
 }
 

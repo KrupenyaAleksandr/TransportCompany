@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryTransportDelivery
 {
+    [Serializable]
     public class RouteName
     {
         /// <summary>

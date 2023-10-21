@@ -10,19 +10,24 @@ namespace ClassLibraryTransportDelivery
     /// <summary>
     /// Водитель
     /// </summary>
+    [Serializable]
     public class Driver : IValidatable
     {
         /// <summary>
         /// id нового водителя
         /// </summary>
-        private static int _newDriverId;
+        private static int _NewDriverId;
 
-        private static int newDriverId
+        public static int NewDriverId
         {
             get
             {
-                _newDriverId++;
-                return _newDriverId;
+                _NewDriverId++;
+                return _NewDriverId;
+            }
+            set 
+            { 
+                _NewDriverId = value; 
             }
         }
 
@@ -65,7 +70,7 @@ namespace ClassLibraryTransportDelivery
 
         public Driver() 
         {
-            DriverId = newDriverId;
+            DriverId = NewDriverId;
         }
         public Driver(string firstName, string lastName, string middleName, int experience)
         {
@@ -73,7 +78,7 @@ namespace ClassLibraryTransportDelivery
             LastName = lastName;
             MiddleName = middleName;
             Experience = experience;
-            DriverId = newDriverId;
+            DriverId = NewDriverId;
         }
 
         public override string ToString()

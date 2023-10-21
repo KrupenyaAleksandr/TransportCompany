@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibraryTransportDelivery;
+using ClassLibraryTransportDelivery.Serialization;
 using WindowsFormsControlLibraryTransportCompany;
 
 namespace Lab4
@@ -268,6 +269,61 @@ namespace Lab4
                 {
                     MessageBox.Show("Не выбрана строка с водителем");
                 }
+            }
+        }
+
+        private void savexMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialogMain.Filter = "XML-файлы|*.xml|Все файлы|*.*";
+            if (saveFileDialogMain.ShowDialog() == DialogResult.OK)
+            {
+                TransportCompanySerialization.Save(saveFileDialogMain.FileName, SerializeType.XML);
+            }
+        }
+        private void saveJSONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialogMain.Filter = "JSON-файлы|*.json|Все файлы|*.*";
+            if (saveFileDialogMain.ShowDialog() == DialogResult.OK)
+            {
+                TransportCompanySerialization.Save(saveFileDialogMain.FileName, SerializeType.JSON);
+            }
+        }
+
+        private void saveBinaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialogMain.Filter = "Двоичные файлы|*.bin|Все файлы|*.*";
+            if (saveFileDialogMain.ShowDialog() == DialogResult.OK)
+            {
+                TransportCompanySerialization.Save(saveFileDialogMain.FileName, SerializeType.Binary);
+            }
+        }
+
+        private void loadXMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialogMain.Filter = "XML-файлы|*.xml|Все файлы|*.*";
+            if (openFileDialogMain.ShowDialog() == DialogResult.OK)
+            {
+                TransportCompanySerialization.Load(openFileDialogMain.FileName, SerializeType.XML);
+
+            }
+        }
+
+        private void loadJSONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialogMain.Filter = "JSON-файлы|*.json|Все файлы|*.*";
+            if (openFileDialogMain.ShowDialog() == DialogResult.OK)
+            {
+                TransportCompanySerialization.Load(openFileDialogMain.FileName, SerializeType.JSON);
+            }
+        }
+
+        private void loadBinaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            openFileDialogMain.Filter = "Двоичные файлы|*.bin|Все файлы|*.*";
+            if (openFileDialogMain.ShowDialog() == DialogResult.OK)
+            {
+                TransportCompanySerialization.Load(openFileDialogMain.FileName, SerializeType.Binary);
             }
         }
     }
