@@ -112,7 +112,6 @@ namespace ClassLibraryTransportDelivery.Serialization
             var drivers = new Dictionary<int, Driver>();
             int maxRouteId = 0;
             int maxDriverId = 0;
-            Console.WriteLine(transportCompanySerializable.Routes[0].RouteId);
             foreach (var route in transportCompanySerializable.Routes)
             {
                 if (route.RouteId > maxRouteId) maxRouteId = route.RouteId;

@@ -33,7 +33,7 @@ namespace ClassLibraryTransportDelivery
             }
         }
 
-        public int RouteId { get; }
+        public int RouteId { get; set; }
 
         /// <summary>
         /// Название маршрута

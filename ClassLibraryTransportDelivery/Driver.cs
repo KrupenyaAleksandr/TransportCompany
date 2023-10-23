@@ -34,7 +34,7 @@ namespace ClassLibraryTransportDelivery
         /// <summary>
         /// id водителя
         /// </summary>
-        public int DriverId { get; }
+        public int DriverId { get; set; }
 
         /// <summary>
         /// Имя
